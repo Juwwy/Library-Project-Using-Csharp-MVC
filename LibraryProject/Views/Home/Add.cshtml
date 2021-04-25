@@ -1,0 +1,56 @@
+﻿@model Books
+@{ 
+    ViewData["Title"] = "Add Book Page";
+}
+
+<section class="container">
+    <div>
+        <h2>Add Book to Catalogue</h2>
+        <p><em>Education is the key to success, Let grow each other...</em></p>
+    </div>
+    <div class="row">
+        
+        <div class="col-md-7 mt-2">
+            <form asp-controller="home" asp-action="add" method="post">
+                <div class="form-group">
+                    <label asp-for="ISBN" class="text-center">ISBN</label>
+                    <input type="text" class="form-control" asp-for="ISBN" placeholder="Enter Book ISBN" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Title" class="text-center">Title</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Enter Book Title" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Author" class="text-center">Author</label>
+                    <input type="text" class="form-control" asp-for="Author" placeholder="Enter Book Author's name" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Edition" class="text-center">Edition</label>
+                    <input type="text" class="form-control" asp-for="Edition" placeholder="Enter Book Edition" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Publisher" class="text-center">Book Publisher</label>
+                    <input type="text" class="form-control" asp-for="Publisher" placeholder="Enter Book Publisher" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Publisher" class="text-center">Upload Book Cover photo</label><br />
+                    <input type="file"  asp-for="ImgUrl" />
+                </div>
+
+                <div class="form-group">
+
+                    <input type="submit" class="form-control btn btn-outline-primary" value="Add Book" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 mt-5">
+            <img src="~/images/library.png" class="img-fluid"  style=" border-radius:6px;"/>
+        </div>
+    </div>
+</section>
+

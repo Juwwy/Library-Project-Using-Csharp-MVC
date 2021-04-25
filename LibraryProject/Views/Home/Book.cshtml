@@ -1,0 +1,51 @@
+﻿@model Books
+@{
+    ViewData["Title"] = "Book overview";
+}
+
+<section class="container">
+    <div class="row text-center p-3">
+        <div class="col-md-8">
+            <form>
+                <table class="table table-responsive table-striped">
+                    <tr>
+                        <th colspan="2">Book Information</h4></th>
+
+                    </tr>
+                    <tr>
+                        <td><b>ISBN</b></td>
+                        <td><input type="text" class="form-control" readonly value="@Model.ISBN" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Book Title:</b></td>
+                        <td><input type="text" class="form-control" readonly value="@Model.Title" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Book Author:</b></td>
+                        <td><input type="text" class="form-control" readonly value="@Model.Author" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Edition:</b></td>
+                        <td><input type="text" class="form-control" readonly value="@Model.Edition" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Publisher:</b></td>
+                        <td><input type="text" class="form-control" readonly value="@Model.Publisher" /></td>
+                    </tr>
+
+
+
+                </table>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h4>Only Those That Grow Their Brain Get Expose To New Thing</h4>
+            <p>Our library content is very helpful to student, staff and researcher to solve problem of any kind</p>
+
+            <div class="text-center mt-4">
+                <img src="~/images/libill.jpg" class="img-fluid" style="border-radius: 10px"; />
+            </div>
+        </div>
+    </div>
+</section>
+

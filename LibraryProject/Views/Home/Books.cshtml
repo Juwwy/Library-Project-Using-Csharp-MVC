@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Books>
+@{ 
+    ViewData["Title"] = "Book List Page";
+}
+
+<section class="container">
+    <div class="mb-3">
+        <h2>Book Catalogue content </h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if (Model.Count<Books>() > 0)
+            {
+                <table class="table table-responsive table-striped mb-5">
+                    <tr>
+                        <th>S/N</th>
+                        <th>Cover Photo</th>
+                        <th>ISBN</th>
+                        <th>Book Title</th>
+                        <th>Author's name</th>
+                        <th>Edition</th>
+                        <th>Publisher</th>
+                        <th>Overview</th>
+                    </tr>
+                    @foreach (Books book in Model)
+                    {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.ImgUrl</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Edition</td>
+                    <td>@book.Publisher</td>
+                    <td><a asp-controller="home" asp-action="book" asp-route-Id="@book.Id"><button class="btn btn-danger">View</button></a></td>
+
+                </tr>
+                    }
+                </table>
+
+            }
+            else
+            {
+                <p>No Item found in the catalogue at the moment </p>
+            }
+
+
+
+        </div>
+
+    </div>
+    <div class="mt-5">
+        <button class="btn btn-outline-success text-light btn-link"><a asp-controller="home" asp-action="index">Back To Library</a></button>
+    </div>
+</section>

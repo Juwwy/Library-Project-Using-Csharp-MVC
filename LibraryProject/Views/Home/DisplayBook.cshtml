@@ -1,0 +1,39 @@
+﻿@model Books
+@{
+    ViewData["Title"] = "Search Display Page";
+}
+
+<section class="container">
+    <div class="text-center"><h3><input class="btn btn-outline-success btn-block disabled" value="Search Result" /></h3></div>
+<div class="row text-center p-3">
+    <div class="col-md-12">
+        @if (Model != null)
+        {
+            <table class="table table-responsive table-striped ">
+                <tr>
+                    <th>S/N</th>
+                    <th>Cover Photo</th>
+                    <th>ISBN</th>
+                    <th>Book Title</th>
+                    <th>Author's name</th>
+                    <th>Edition</th>
+                    <th>Publisher</th>
+                </tr>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.ImgUrl</td>
+                    <td>@Model.ISBN</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.Author</td>
+                    <td>@Model.Edition</td>
+                    <td>@Model.Publisher</td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <p>No Match Found for your Search!</p>
+        }
+    </div>
+</div>
+</section>
